@@ -1,0 +1,94 @@
+
+Intro to Site:
+Income inequality is a growing concern in America. The gap between the rich and the poor in Massachusetts in 2015 was one of the widest nationwide, surpassing all but five other states.
+These graphs illustrate income disparities in Boston and neighboring cities broken down by gender and race/ethnicity.
+
+Sources:
+inequality.org
+US Census Bureau
+datausa.io
+
+
+Chelsea
+Intro:
+Households in Chelsea, MA have a median annual income of $47,733, which is less than the median annual income in the United States ($55,775) and the median annual income in Massachusetts ($70,628).
+
+Gender:
+In 2015, full-time male employees in Chelsea had an average salary of $55,135, 1.19 times more than female employees at $46,246.
+This chart shows the gender-based wage disparity in the 5 most common occupations in Chelsea by number of full-time employees.
+
+Ethnicity:
+In 2015, workers who identify as Black or African America were the highest paid, making $56,028, followed by White workers at $46,696, and then Asian workers at $34,565.
+This chart shows the race- and ethnicity-based wage disparities in the 5 most common occupations in Chelsea.
+
+
+Boston
+Intro:
+Households in Boston, MA have a median annual income of $58,263, which is more than the median annual income in the United States ($55,775), but less than the median annual income in Massachusetts ($70,628).
+
+Gender:
+In 2015, full-time male employees in Massachusetts had an average salary of $80,705, 1.35 times more than female employees at $59,936.
+This chart shows the gender-based wage disparity in the 5 most common occupations in Massachusetts by number of full-time employees.
+
+Ethnicity:
+In 2015, workers who identify as Alaskan natives were the highest paid, making $135,171, followed by Asian workers at $64,606, and then White workers at $61,923.
+This chart shows the race- and ethnicity-based wage disparities in the 5 most common occupations in Massachusetts.
+
+
+
+Cambridge
+Intro:
+Households in Cambridge, MA have a median annual income of $79,416, which is more than the median annual income in the United States ($55,775), but less than the median annual income in Massachusetts ($70,628).
+
+Gender:
+In 2015, full-time male employees in Cambridge had an average salary of $90,089, 1.23 times more than female employees at $73,275.
+This chart shows the gender-based wage disparity in the 5 most common occupations in Cambridge by number of full-time employees.
+
+Ethnicity:
+In 2015, workers who identify as White were the highest paid, making $74,338, followed by Asian workers at $66,870.
+This chart shows the race- and ethnicity-based wage disparities in the 5 most common occupations in Cambridge.
+
+
+
+Brookline
+Intro:
+Households in Brookline, MA have a median annual income of $95,518, which is more than the median annual income in the United States  ($55,775), but less than the median annual income in Massachusetts ($70,628).
+
+Gender:
+In 2015, full-time male employees in Newton City and Brookline had an average salary of $134,459, 1.51 times more than female employees at $88,806.
+This chart shows the gender-based wage disparity in the 5 most common occupations in Newton City and Brookline by number of full-time employees.
+
+Ethnicity:
+In 2015, workers who identify as White were the highest paid, making $103,630, followed by Asian workers at $71,415.
+This chart shows the race- and ethnicity-based wage disparities in the 5 most common occupations in Newton City and Brookline.
+
+
+
+
+Somerville
+Intro:
+Households in Somerville, MA have a median annual income of $73,106, which is more than the median annual income in the United States  ($55,775), but less than the median annual income in Massachusetts ($70,628).
+
+Gender:
+In 2015, full-time male employees in Somerville and Everett had an average salary of $58,350, 1.19 times more than female employees at $48,916.
+This chart shows the gender-based wage disparity in the 5 most common occupations in Somerville and Everett by number of full-time employees.
+
+Ethnicity:
+In 2015, workers who identify as American Indian were the highest paid, making $54,068, followed by White workers at $50,737, and then by Asian workers at $47,984.
+This chart shows the race- and ethnicity-based wage disparities in the 5 most common occupations in Somerville and Everett.
+
+
+
+Hyde Park, JP, Roslindale
+
+Intro:
+Households in Hyde Park, Jamaica Plain, Roslindale & West Roxbury, MA have a median annual income of $73,357, which is more than the median annual income in the United States ($55,775) and the median annual income in Massachusetts ($70,628).
+
+Gender:
+In 2015, full-time male employees in Hyde Park, Jamaica Plain, Roslindale & West Roxbury, MA had an average salary of $84,000, 1.25 times more than female employees at $4,348.
+This chart shows the gender-based wage disparity in the 5 most common occupations in Hyde Park, Jamaica Plain, Roslindale & West Roxbury, MA by number of full-time employees.
+
+Ethnicity:
+In 2015, workers who identify as belonging to two or more races or ethnicities were the highest paid, making $78,788, followed by Asian workers at $73,044, and then White workers at $66,982.
+This chart shows the race- and ethnicity-based wage disparities in the 5 most common occupations in Hyde Park, Jamaica Plain, Roslindale & West Roxbury, MA.
+
