@@ -20,99 +20,94 @@ var City = function(name,
     this.pop_other = pop_other;
     this.pop_white = pop_white;
     this.population = population;
-    this.median_income = income;
-    this.median_age = age;
+    this.median_income = median_income;
+    this.median_age = median_age;
     this.avg_male_salary = avg_male_salary;
     this.avg_female_salary = avg_female_salary;
-    cities.append(this);
+    // cities.append(this);
 };
 
-var cities = [];
+//
+// cities.each(function() {
+//     $("#menu").append(this.name)
+// });
+//
+// City.prototype.display = function() {
+//     //graph
+// };
+//
+// $("#menu").change(function() {
+//     if ($(this).val() == cities[i]) {
+//         cities[i].display();
+//     }
+// });
 
-cities.each(function() {
-    $("#menu").append(this.name)
-});
-
-City.prototype.display = function() {
-    //graph
-};
-
-$("#menu").change(function() {
-    if ($(this).val() == cities[i]) {
-        cities[i].display();
-    }
-});
 
 $(document).ready(function() {
   var city = new City();
   city.name="Boston";
-  $("#cityName").append(formattedCityName);
-  var formattedCityName = HTMLcityName.replace("%data%", city.name);
-  $("#male").append(formattedMaleData);
-  $("#female").append(formattedFemaleData);
-  var formattedMaleData = HTMLgenderData.replace("%data%", city.avg_male_salary);
-  var formattedFemaleData = HTMLgenderData.replace("%data", city.avg_female_salary);
 
-  getRacedata("16000US2507000");
-  getCitydata("16000US2507000");
-  getMaleWagedata("16000US2507000");
-  getFemaleWagedata("16000US2507000");
+  var data =  getRacedata("16000US2507000", city);
 
-  function getRacedata(location) {
+  console.log(data);
+
+  function getRacedata(location, data, callback) {
     var urlRace = "https://api.datausa.io/api/?sort=desc&force=acs.yg_race&show=geo&sumlevel=all&year=latest&geo=" + location;
     $.getJSON(urlRace, function(response) {
       $.each( response.data, function( key, val ) {
-       city.pop_asian = val[4];
-       city.pop_black = val[6];
-       city.pop_hawaiian = val[8];
-       city.pop_latino = val[10];
-       city.pop_native = val[12];
-       city.pop_other = val[14];
-       city.pop_white = val[16];
+       data.pop_asian = val[4];
+       data.pop_black = val[6];
+       data.pop_hawaiian = val[8];
+       data.pop_latino = val[10];
+       data.pop_native = val[12];
+       data.pop_other = val[14];
+       data.pop_white = val[16];
       });
-
-      console.log(city);
     });
+    getCitydata("16000US2507000", data);
+
+    return data;
   }
 
-  function getCitydata(location) {
+  function getCitydata(location, data, callback) {
     var urlCity = "https://api.datausa.io/api/?sort=desc&show=geo&required=year%2Cpop%2Cpop_rank%2Cincome%2Cincome_moe%2Cincome_rank%2Cage%2Cage_rank%2Cowner_occupied_housing_units%2Cus_citizens%2Cnon_eng_speakers_pct&sumlevel=all&limit=2&year=latest&geo=";
     urlCity += location;
     urlCity += "&order=geo&col=pop&rank=1&dataset=False";
 
     $.getJSON(urlCity, function(response) {
       $.each(response.data, function(key, val) {
-        city.population = val[2];
-        city.median_income = val[4];
-        city.median_age = val[7];
+        data.population = val[2];
+        data.median_income = val[4];
+        data.median_age = val[7];
       });
 
-      console.log(city);
     });
+      getMaleWagedata("16000US2507000", data);
+
   }
 
-  function getMaleWagedata(location) {
+  function getMaleWagedata(location, data, callback) {
     var urlWage = "https://api.datausa.io/api/?sort=desc&show=geo&required=year%2Csex%2Cavg_wage%2Cavg_wage_moe%2Cavg_wage_ft%2Cavg_wage_ft_moe&sex=1&sumlevel=all&limit=2&year=latest&geo="+ location + "&order=year&col=avg_wage_ft&rank=1&dataset=False";
 
     $.getJSON(urlWage, function(response) {
       $.each(response.data, function(key, val) {
-        city.avg_male_salary = val[5];
+        data.avg_male_salary = val[5];
       });
 
-      console.log(city);
     });
+    getFemaleWagedata("16000US2507000", data);
   }
 
-  function getFemaleWagedata(location) {
+  function getFemaleWagedata(location, data, callback) {
     var urlWage = "https://api.datausa.io/api/?sort=desc&show=geo&required=year%2Csex%2Cavg_wage%2Cavg_wage_moe%2Cavg_wage_ft%2Cavg_wage_ft_moe&sex=2&sumlevel=all&limit=2&year=latest&geo=" + location + "&order=year&col=avg_wage_ft&rank=1&dataset=False";
 
     $.getJSON(urlWage, function(response) {
       $.each(response.data, function(key, val) {
-        city.avg_female_salary = val[5];
+        data.avg_female_salary = val[5];
       });
-
-      console.log(city);
+      //callback(data);
     });
+    //return data;
   }
 
 });
