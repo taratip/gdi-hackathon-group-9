@@ -8,7 +8,9 @@ var City = function(name,
               pop_white,
               population,
               median_income,
-              median_age) {
+              median_age,
+              avg_male_salary,
+              avg_female_salary) {
     this.name = name;
     this.pop_asian = pop_asian;
     this.pop_black = pop_black;
@@ -20,6 +22,8 @@ var City = function(name,
     this.population = population;
     this.median_income = income;
     this.median_age = age;
+    this.avg_male_salary = avg_male_salary;
+    this.avg_female_salary = avg_female_salary;
 };
 
 var cities = [];
@@ -44,6 +48,8 @@ $(document).ready(function() {
 
   getRacedata("16000US2507000");
   getCitydata("16000US2507000");
+  getMaleWagedata("16000US2507000");
+  getFemaleWagedata("16000US2507000");
 
   function getRacedata(location) {
     var urlRace = "https://api.datausa.io/api/?sort=desc&force=acs.yg_race&show=geo&sumlevel=all&year=latest&geo=" + location;
@@ -75,7 +81,32 @@ $(document).ready(function() {
       });
 
       console.log(city);
-    })
+    });
 
   }
+
+  function getMaleWagedata(location) {
+    var urlWage = "https://api.datausa.io/api/?sort=desc&show=geo&required=year%2Csex%2Cavg_wage%2Cavg_wage_moe%2Cavg_wage_ft%2Cavg_wage_ft_moe&sex=1&sumlevel=all&limit=2&year=latest&geo="+ location + "&order=year&col=avg_wage_ft&rank=1&dataset=False";
+
+    $.getJSON(urlWage, function(response) {
+      $.each(response.data, function(key, val) {
+        city.avg_male_salary = val[5];
+      });
+
+      console.log(city);
+    });
+  }
+
+  function getFemaleWagedata(location) {
+    var urlWage = "https://api.datausa.io/api/?sort=desc&show=geo&required=year%2Csex%2Cavg_wage%2Cavg_wage_moe%2Cavg_wage_ft%2Cavg_wage_ft_moe&sex=2&sumlevel=all&limit=2&year=latest&geo=" + location + "&order=year&col=avg_wage_ft&rank=1&dataset=False";
+
+    $.getJSON(urlWage, function(response) {
+      $.each(response.data, function(key, val) {
+        city.avg_female_salary = val[5];
+      });
+
+      console.log(city);
+    });
+  }
+
 });
