@@ -9,8 +9,8 @@ var City = function(name,
               pop_other,
               pop_white,
               population,
-              median_income,
-              median_age,
+              income,
+              age,
               avg_male_salary,
               avg_female_salary) {
     this.name = name;
@@ -34,12 +34,18 @@ city1.name = "Boston";
 city1.avg_male_salary = 6500;
 city1.avg_female_salary = 7000;
 
-// var formattedMaleData = HTMLgenderData.replace("%data%", city1.avg_male_salary);
-// var formattedFemaleData = HTMLgenderData.replace("%data%", city1.avg_female_salary);
-// $("#male").append(formattedMaleData);
-// $("#female").append(formattedFemaleData);
+var formattedMaleData = HTMLgenderData.replace("%data%", city1.avg_male_salary);
+var formattedFemaleData = HTMLgenderData.replace("%data%", city1.avg_female_salary);
+$("#male").append(formattedMaleData);
+$("#female").append(formattedFemaleData);
 
-// var formattedCityName = HTMLcityName.replace("%data%", city1.name);
+var formattedCityName = HTMLcityName.replace("%data%", city1.name);
+//$("#menu").append(formattedCityName);
+
+/*
+City.prototype.display = function() {
+    //show graph
+};
 
 
 $(document).ready(function() {
@@ -109,4 +115,4 @@ $(document).ready(function() {
 
   }
 
-});
+}); */

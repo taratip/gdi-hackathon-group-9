@@ -1,73 +1,83 @@
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 	<meta name="viewport" content="width=1024">
 	<title>Wages in Boston</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="bargraph.css">
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script src="dataBuilder.js"></script>
 	<script src="HTMLstrings.js"></script>
 	<script src="bargraph.js"></script>
+
 </head>
 <body>
 <div class="dropdown" id="menu">
-	<p>Cities</p>
-	<div class="cityName" id="%data%">
-	</div>
+  <p>Cities</p>
+  <div class="cityname" id="%data%">
+    <p>Boston</p>
+  </div>
 </div>
 <div id="introduction">
-	<p id="introduction">Bacon ipsum dolor amet short loin tongue beef filet mignon meatloaf. Shank ham hock short loin, sausage ribeye prosciutto tenderloin beef ribs. Hamburger ham hock pancetta bresaola pork loin pastrami ham filet mignon short loin flank drumstick buffalo chuck.</p>
+  <p id="introduction">Boston, MA has one of the widest gaps between its highest and lowest earning residents in the country. As of part of the Girl Develop It Hackathon, four designers and developers partnered to bring you, "Visualizing Wage Inequality," a data visualization of income inequality in Boston, Chelsea, and Cambridge broken down by race and ethnicity as well as gender.</p>
 </div>
 <div id="datasets">
-	<div class="button" id="%data%">
-	</div>
-	<div class="chart">
-	    <h2>Wage By Gender</h2>
-		<table id="data-table" border="1" cellpadding="10" cellspacing="0" summary="The effects of the zombie outbreak on the populations of endangered species from 2012 to 2016">
-			<caption>Income in $10K</caption>
-			<thead>
-				<tr>
-					<td>&nbsp;</td>
-					<!-- <th scope="col">2012</th>
-					<th scope="col">2013</th> -->
-					<th scope="col">2014</th>
-					<th scope="col">2015</th>
-					<!-- <th scope="col">2016</th> -->
-				</tr>
-			</thead>
-			<tbody>
-				<tr id="male">
-					<th scope="row">Male</th>
-					<td>4080</td>
-					<td>6080</td>
-					<!-- <td>6240</td>
-					<td>3520</td>
-					<td>2240</td> -->
-				</tr>
-				<tr>
-					<th scope="row" id="female">Female</th>
-					<td>5680</td>
-					<td>6880</td>
-					<!-- <td>5760</td>
-					<td>5120</td>
-					<td>2640</td> -->
-				</tr>
-				<!-- <tr>
-					<th scope="row">Other</th>
-					<td>1040</td>
-					<td>1760</td>
-					<td>2880</td>
-					<td>4720</td>
-					<td>7520</td>
-				</tr> -->
-			</tbody>
-		</table>
-	</div>
+    <div class="button" id="%data%">
+        <p>By Gender</p>
+    </div>
+    <div class="button" id="%data%">
+        <p>By Race/Ethnicity</p>
+    </div>
 </div>
-<p>Mouse over the bars to display information.</p>
-<div id="%data%">
-	</div>
+<div class="divChart" id="%data%">
+        <div class="chart">
+            <h2>Wage By Gender</h2>
+            <table id="data-table" border="1" cellpadding="10" cellspacing="0" summary="The effects of the zombie outbreak on the populations of endangered species from 2012 to 2016">
+                <caption>Income in $10K</caption>
+                <thead>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <!-- <th scope="col">2012</th>
+                        <th scope="col">2013</th> -->
+                        <th scope="col">2014</th>
+                        <th scope="col">2015</th>
+                        <!-- <th scope="col">2016</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="male">
+                        <th scope="row">Male</th>
+                        <td>4080</td>
+                        <!-- <td>6080</td>
+                        <td>6240</td>
+                        <td>3520</td>
+                        <td>2240</td> -->
+                    </tr>
+                    <tr id="female">
+                        <th scope="row">Female</th>
+                        <td>5680</td>
+                        <!-- <td>6880</td>
+                        <td>5760</td>
+                        <td>5120</td>
+                        <td>2640</td> -->
+                    </tr>
+                    <!-- <tr>
+                        <th scope="row">Other</th>
+                        <td>1040</td>
+                        <td>1760</td>
+                        <td>2880</td>
+                        <td>4720</td>
+                        <td>7520</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+        <p id="instructions">Mouse over the bars to display information.</p>
+    </div>
+</div>
+  <footer>
+    <p>Data Source: <a href="https://datausa.io">Data USA</a>. &copy; 2017</p>
+  </footer>
 </body>
+<script src="dataBuilder.js"></script>
 </html>
