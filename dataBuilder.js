@@ -1,4 +1,4 @@
-var City = {
+var City = function() {
     this.name = "name";
     this.population = "number";
     this.median = "amount";
@@ -8,9 +8,18 @@ var City = {
     this.raceChart = "url";
 };
 
+var cities = [];
+
+cities.each(function() {
+    $("#menu").append(this.name)
+});
+
 City.prototype.display = function() {
-    $("#id").prepend(formattedCityName);
-    var formattedCityName = HTMLcityName.replace("%data%", city.name);
+    //graph
 };
 
-$("#menu").change(city.display());
+$("#menu").change(function() {
+    if ($(this).val() == cities[i]) {
+        cities[i].display();
+    }
+});
