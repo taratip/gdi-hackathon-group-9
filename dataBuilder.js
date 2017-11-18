@@ -40,7 +40,7 @@ $("#male").append(formattedMaleData);
 $("#female").append(formattedFemaleData);
 
 var formattedCityName = HTMLcityName.replace("%data%", city1.name);
-$("#menu").append(formattedCityName);
+//$("#menu").append(formattedCityName);
 
 /*
 City.prototype.display = function() {
