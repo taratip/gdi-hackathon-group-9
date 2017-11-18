@@ -1,16 +1,16 @@
-var city = {
-    "name": "name",
-    "population": "number",
-    "medianWage": "amount",
-    "popGender": "number",
-    "popRace": "race/ethnicity",
-    "genderChart": "url",
-    "raceChart": "url"
+var City = {
+    this.name = "name";
+    this.population = "number";
+    this.median = "amount";
+    this.popGender = "number";
+    this.popRace = "number";
+    this.genderChart = "url";
+    this.raceChart = "url";
 };
 
-city.display = function() {
-    $("#id").prepend(formattedName);
-    var formattedName = HTMLname.replace("%data%", city.name);
+City.prototype.display = function() {
+    $("#id").prepend(formattedCityName);
+    var formattedCityName = HTMLcityName.replace("%data%", city.name);
 };
 
-city.display();
+$("#menu").change(city.display());
