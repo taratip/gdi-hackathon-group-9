@@ -1,23 +1,26 @@
-var City = {
-    this.name = "name";
-    this.population = "number";
-    this.median = "amount";
-    this.popGender = "number";
-    this.popRace = "number";
-    this.genderChart = "url";
-    this.raceChart = "url";
+function City(name,
+              pop_asian,
+              pop_black,
+              pop_hawaiian,
+              pop_latino,
+              pop_native,
+              pop_other,
+              pop_white,
+              population,
+              median_income,
+              median_age) {
+    this.name = name;
+    this.pop_asian = pop_asian;
+    this.pop_black = pop_black;
+    this.pop_hawaiian = pop_hawaiian;
+    this.pop_latino = pop_latino;
+    this.pop_native = pop_native;
+    this.pop_other = pop_other;
+    this.pop_white = pop_white;
+    this.population = population;
+    this.median_income = income;
+    this.median_age = age;
 };
-
-var Occupation = {
-  this.year = year;
-  this.geo = geo;
-  this.soc = soc;
-  this.race = race;
-  this.num_ppl = num_ppl;
-  this.num_ppl_moe = num_ppl_moe;
-  this.avg_wage = ave_wage;
-  this.avg_wage_moe = avg_wage_moe;
-}
 
 City.prototype.display = function() {
     $("#id").prepend(formattedCityName);
@@ -27,27 +30,43 @@ City.prototype.display = function() {
 $("#menu").change(city.display());
 
 $(document).ready(function() {
-  getdata();
+  var city = new City();
+  city.name="Boston";
 
-  function getdata(){
-    $.getJSON("https://api.datausa.io/api/?sort=desc&sumlevel=3%2Call&limit=45&show=soc%2Crace&year=2014&required=num_ppl%2Cnum_ppl_moe%2Cavg_wage%2Cavg_wage_moe&geo=16000US2507000", function(response) {
-     var items = [];
+  getRacedata("16000US2507000");
+  getGenderdata("16000US2507000");
+
+  function getRacedata(location) {
+    var urlRace = "https://api.datausa.io/api/?sort=desc&force=acs.yg_race&show=geo&sumlevel=all&year=latest&geo=" + location;
+    $.getJSON(urlRace, function(response) {
       $.each( response.data, function( key, val ) {
-       var occupation = {
-         year = val[0],
-         geo = val[1],
-         soc = val[2],
-         race = val[3],
-         num_ppl = val[4],
-         num_ppl_moe = val[5],
-         avg_wage = val[6],
-         avg_wage_moe = val[7]
-       }
-
-       items.push(occupation);
+       city.pop_asian = val[4];
+       city.pop_black = val[6];
+       city.pop_hawaiian = val[8];
+       city.pop_latino = val[10]
+       city.pop_native = val[12];
+       city.pop_other = val[14];
+       city.pop_white = val[16];
       });
 
-      console.log(items);
+      console.log(city);
     });
+  }
+
+  function getCitydata(location) {
+    var urlCity = "https://api.datausa.io/api/?sort=desc&show=geo&required=year%2Cpop%2Cpop_rank%2Cincome%2Cincome_moe%2Cincome_rank%2Cage%2Cage_rank%2Cowner_occupied_housing_units%2Cus_citizens%2Cnon_eng_speakers_pct&sumlevel=all&limit=2&year=latest&geo=";
+    urlCity += location;
+    urlCity += "&order=geo&col=pop&rank=1&dataset=False";
+
+    $.getJSON(urlCity, function(response) {
+      $.each(response.data, function(key, val) {
+        city.population = val[2];
+        city.median_income = val[4];
+        city.median_age = val[7];
+      });
+
+      console.log(city);
+    })
+
   }
 });
