@@ -20,6 +20,7 @@ var City = function(name,
     this.population = population;
     this.median_income = income;
     this.median_age = age;
+    cities.append(this);
 };
 
 var cities = [];
@@ -41,6 +42,8 @@ $("#menu").change(function() {
 $(document).ready(function() {
   var city = new City();
   city.name="Boston";
+  $("#cityName").append(formattedCityName);
+  var formattedCityName = HTMLcityName.replace("%data%", city.name);
 
   getRacedata("16000US2507000");
   getCitydata("16000US2507000");
@@ -52,7 +55,7 @@ $(document).ready(function() {
        city.pop_asian = val[4];
        city.pop_black = val[6];
        city.pop_hawaiian = val[8];
-       city.pop_latino = val[10]
+       city.pop_latino = val[10];
        city.pop_native = val[12];
        city.pop_other = val[14];
        city.pop_white = val[16];
@@ -75,7 +78,7 @@ $(document).ready(function() {
       });
 
       console.log(city);
-    })
+    });
 
   }
 });
