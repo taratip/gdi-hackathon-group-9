@@ -22,12 +22,21 @@ var City = function(name,
     this.median_age = age;
 };
 
+var cities = [];
+
+cities.each(function() {
+    $("#menu").append(this.name)
+});
+
 City.prototype.display = function() {
-    $("#id").prepend(formattedCityName);
-    var formattedCityName = HTMLcityName.replace("%data%", city.name);
+    //graph
 };
 
-$("#menu").change(city.display());
+$("#menu").change(function() {
+    if ($(this).val() == cities[i]) {
+        cities[i].display();
+    }
+});
 
 $(document).ready(function() {
   var city = new City();
