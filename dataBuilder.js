@@ -48,6 +48,10 @@ $(document).ready(function() {
   city.name="Boston";
   $("#cityName").append(formattedCityName);
   var formattedCityName = HTMLcityName.replace("%data%", city.name);
+  $("#male").append(formattedMaleData);
+  $("#female").append(formattedFemaleData);
+  var formattedMaleData = HTMLgenderData.replace("%data%", city.avg_male_salary);
+  var formattedFemaleData = HTMLgenderData.replace("%data", city.avg_female_salary);
 
   getRacedata("16000US2507000");
   getCitydata("16000US2507000");
