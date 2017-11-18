@@ -1,0 +1,78 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=1024">
+	<title>Wages in Boston</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="bargraph.css">
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script src="HTMLstrings.js"></script>
+	<script src="bargraph.js"></script>
+	<script src="dataBuilder.js"></script>
+</head>
+<body>
+<div class="dropdown" id="menu">
+	<p>Cities</p>
+	<div class="cityName" id="%data%">
+	</div>
+</div>
+<div id="introduction">
+	<p id="introduction">Income inequality is a growing concern in America. The gap between the rich and the poor in Massachusetts in 2015 was one of the widest nationwide, surpassing all but five other states.
+These graphs illustrate income disparities in Boston and neighboring cities broken down by gender and race/ethnicity.
+</p>
+</div>
+<div id="datasets">
+	<div class="chart">
+	    <h2>Wage By Race/Ethnicity</h2>
+		<table id="data-table" border="1" cellpadding="10" cellspacing="0" summary="The effects of the zombie outbreak on the populations of endangered species from 2012 to 2016">
+			<caption>Average Salary</caption>
+			<thead>
+				<tr>
+					<td>&nbsp;</td>
+					<!-- <th scope="col">2012</th>
+					<th scope="col">2013</th>
+					<th scope="col">2014</th>
+					<th scope="col">2015</th>
+					<th scope="col">2016</th> -->
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row" id="alaskan">Alaskan Native</th>
+					<td>4080</td>
+				</tr>
+				<tr>
+					<th scope="row" id="indian">American Indian</th>
+					<td>3000</td>
+				</tr>
+				<tr>
+					<th scope="row" id="asian">Asian</th>
+					<td>2500</td>
+				</tr>
+				<tr>
+					<th scope="row" id="black">Black or African American</th>
+					<td>2960</td>
+				</tr>
+				<tr>
+					<th scope="row" id="white">White</th>
+					<td>4500</td>
+				</tr>
+				<tr>
+					<th scope="row" id="twoplus">2+ Ethnicities</th>
+					<td>3800</td>
+				</tr>
+				<tr>
+					<th scope="row" id="unknown">Unknown</th>
+					<td>3500</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+</div>
+<p>Mouse over the bars to display information.</p>
+<div id="%data%">
+	</div>
+</body>
+</html>
