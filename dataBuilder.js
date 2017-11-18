@@ -1,4 +1,4 @@
-function City(name,
+var City = function(name,
               pop_asian,
               pop_black,
               pop_hawaiian,
@@ -26,12 +26,21 @@ function City(name,
     this.avg_female_salary = avg_female_salary;
 };
 
+var cities = [];
+
+cities.each(function() {
+    $("#menu").append(this.name)
+});
+
 City.prototype.display = function() {
-    $("#id").prepend(formattedCityName);
-    var formattedCityName = HTMLcityName.replace("%data%", city.name);
+    //graph
 };
 
-$("#menu").change(city.display());
+$("#menu").change(function() {
+    if ($(this).val() == cities[i]) {
+        cities[i].display();
+    }
+});
 
 $(document).ready(function() {
   var city = new City();
