@@ -34,7 +34,7 @@ $(document).ready(function() {
   city.name="Boston";
 
   getRacedata("16000US2507000");
-  getGenderdata("16000US2507000");
+  getCitydata("16000US2507000");
 
   function getRacedata(location) {
     var urlRace = "https://api.datausa.io/api/?sort=desc&force=acs.yg_race&show=geo&sumlevel=all&year=latest&geo=" + location;
