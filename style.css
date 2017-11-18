@@ -1,8 +1,9 @@
 body{
-	background-color: #ecf0f1;
+	background-color: #F8FDFE;
 	margin: 0;
   	padding: 0;
 }
+
 div#menu {
 	width: 100%;
 	height: 50px;
@@ -17,6 +18,11 @@ div.dropdown {
 
 a {
 	text-decoration: none;
+	color: #2980b9;
+}
+
+a:visited {
+	color: #c0392b;
 }
 
 ul {
@@ -45,12 +51,16 @@ div#introduction {
     margin-top: -32px;
 }
 
-p {
+p, h2, h4 {
+	font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+li {
 	font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 p#introduction {
-	font-size: 24pt;
+	font-size: 20pt;
 	padding: 5%;
 	text-align: center;
 	color: #ffffff;
@@ -65,8 +75,9 @@ p.dataVari {
 
 div#datasets {
 	margin: auto;
-	width: 100%;
-	padding: 0 7% 0 7%;
+	padding: 0 7% 2% 7%;
+	display: flex;
+    justify-content: center;
 }
 
 div.button {
@@ -74,5 +85,32 @@ div.button {
 	text-align: center;
 	margin: 1%;
 	width: 15%;
-	border: 1px solid #2980b9;
+	border: 2px solid #2980b9;
+	border-radius: 5px;
+}
+div.divChart {
+	width: 100%;
+	float: left;
+}
+div.chart {
+	width: 53%;
+	margin: auto;
+}
+
+p#instructions {
+	text-align: center;
+	color: #2980b9;
+}
+footer {
+	background-color: #000000;
+	position: relative;
+    bottom: 0;
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+}
+
+footer p {
+	color: #F8FDFE;
+	text-align: center;
 }
