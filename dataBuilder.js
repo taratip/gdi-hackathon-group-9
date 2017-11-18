@@ -1,4 +1,4 @@
-function City(name,
+var City = function(name,
               pop_asian,
               pop_black,
               pop_hawaiian,
