@@ -7,7 +7,6 @@
 	<link rel="stylesheet" href="bargraph.css">
 	<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script scr="dataBuilder.js"></script>
 	<script src="HTMLstrings.js"></script>
 	<script src="bargraph.js"></script>
 </head>
@@ -38,19 +37,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row" id="male">Male</th>
+				<tr id="male">
+					<th scope="row">Male</th>
 					<td>4080</td>
-					<td>6080</td>
-					<!-- <td>6240</td>
+					<!-- <td>6080</td>
+					<td>6240</td>
 					<td>3520</td>
 					<td>2240</td> -->
 				</tr>
-				<tr>
-					<th scope="row" id="female">Female</th>
+				<tr id="female">
+					<th scope="row">Female</th>
 					<td>5680</td>
-					<td>6880</td>
-					<!-- <td>5760</td>
+					<!-- <td>6880</td>
+					<td>5760</td>
 					<td>5120</td>
 					<td>2640</td> -->
 				</tr>
@@ -70,4 +69,5 @@
 <div id="%data%">
 	</div>
 </body>
+<script src="dataBuilder.js"></script>
 </html>

@@ -1,3 +1,5 @@
+var cities = [];
+
 var City = function(name,
               pop_asian,
               pop_black,
@@ -7,8 +9,8 @@ var City = function(name,
               pop_other,
               pop_white,
               population,
-              median_income,
-              median_age,
+              income,
+              age,
               avg_male_salary,
               avg_female_salary) {
     this.name = name;
@@ -24,17 +26,25 @@ var City = function(name,
     this.median_age = age;
     this.avg_male_salary = avg_male_salary;
     this.avg_female_salary = avg_female_salary;
-    cities.append(this);
+    cities.push(this);
 };
 
-var cities = [];
+var city1 = new City();
+city1.name = "Boston";
+city1.avg_male_salary = 6500;
+city1.avg_female_salary = 7000;
 
-cities.each(function() {
-    $("#menu").append(this.name)
-});
+var formattedMaleData = HTMLgenderData.replace("%data%", city1.avg_male_salary);
+var formattedFemaleData = HTMLgenderData.replace("%data%", city1.avg_female_salary);
+$("#male").append(formattedMaleData);
+$("#female").append(formattedFemaleData);
 
+var formattedCityName = HTMLcityName.replace("%data%", city1.name);
+$("#menu").append(formattedCityName);
+
+/*
 City.prototype.display = function() {
-    //graph
+    //show graph
 };
 
 $("#menu").change(function() {
@@ -44,15 +54,6 @@ $("#menu").change(function() {
 });
 
 $(document).ready(function() {
-  var city = new City();
-  city.name="Boston";
-  $("#cityName").append(formattedCityName);
-  var formattedCityName = HTMLcityName.replace("%data%", city.name);
-  $("#male").append(formattedMaleData);
-  $("#female").append(formattedFemaleData);
-  var formattedMaleData = HTMLgenderData.replace("%data%", city.avg_male_salary);
-  var formattedFemaleData = HTMLgenderData.replace("%data", city.avg_female_salary);
-
   getRacedata("16000US2507000");
   getCitydata("16000US2507000");
   getMaleWagedata("16000US2507000");
@@ -115,4 +116,4 @@ $(document).ready(function() {
     });
   }
 
-});
+}); */
