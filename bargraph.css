@@ -14,7 +14,7 @@
 }
 
 #figure {
-   height: 380px;
+   max-height: 380px;
    position: relative;
 }
 
@@ -32,7 +32,7 @@
 /* Legend */
 
 .legend {
-   background: #f0f0f0;
+   background: #F8FDFE;
    border-radius: 4px;
    bottom: 0;
    position: absolute;
